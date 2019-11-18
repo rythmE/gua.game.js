@@ -8,7 +8,7 @@ var Scene = function(game) {
 
     var score = 0
 
-    var blocks = loadLevel(game, 1)
+    window.blocks = loadLevel(game, 1)
 
     game.registerAction('a', function(){
         paddle.moveLeft()
@@ -28,6 +28,7 @@ var Scene = function(game) {
         game.drawImage(paddle)
         game.drawImage(ball)
         // draw blocks
+        var blocks = window.blocks
         for (var i = 0; i < blocks.length; i++) {
             var block = blocks[i]
             if (block.alive) {

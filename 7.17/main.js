@@ -18,10 +18,12 @@ var enableDebugMode = function(game, enable) {
     window.paused = false
     window.addEventListener('keydown', function(event){
         var k = event.key
+        log('key: ', k)
         if (k == 'p') {
             // 暂停功能
             window.paused = !window.paused
         } else if ('1234567'.includes(k)) {
+            log('press: ', k)
             // 为了 debug 临时加的载入关卡功能
             blocks = loadLevel(game, Number(k))
         }
